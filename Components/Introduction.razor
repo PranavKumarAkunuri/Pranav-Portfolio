@@ -1,0 +1,18 @@
+@namespace My_Portfolio.Components
+@inject IJSRuntime JS
+<div class="Introduction">
+    <img src="profile-img.png" class="profile-photo" />
+    <br>
+    <h1 class="typing-text" id="typing-text"></h1>
+    <p>I'm Pranav Kumar, a 19-year-old student at CMR Group of Institutions. I'm a passionate learner and a patient listener, excited to share my journey with you. Welcome to my portfolio website, where you can dive into my adventures in web development. Join me as I explore, innovate, and grow in the dynamic world of web development. Let's build the future together!</p>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("startTypingEffect");
+        }
+    }
+}

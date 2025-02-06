@@ -1,0 +1,24 @@
+@using My_Portfolio.Models
+@namespace My_Portfolio.Components
+@code {
+    private List<Project> projects = new List<Project>
+    {
+        new Project { Title = "DeepFake Video Detection", Description = "Predicts weather the input video is a DeepFake Video or not using LSTM and CNN.", Link = "https://pranavkumarakunuri.github.io/Age-Meter/" },
+        new Project { Title = "Calorie Tracker App", Description = "It is a Personalized Calorie Tracker App where u can customize ur calorie intake accordingly.", Link = "https://pranavkumarakunuri.github.io/Age-Meter/" },
+        new Project { Title = "Age Meter", Description = "Calculates Your Age according to your BirthYear.", Link = "https://pranavkumarakunuri.github.io/Age-Meter/" }
+    };
+}
+
+<div class="project-cards">
+    <h1>My Projects</h1>
+    <div class="card-container">
+        @foreach (var project in projects)
+        {
+            <div class="card">
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+                <a href="@project.Link" target="_blank" class="github-link">View Project</a>
+            </div>
+        }
+    </div>
+</div>
